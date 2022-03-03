@@ -1,0 +1,2225 @@
+{
+  "credits": {
+    "kala Asi and ma pona pi toki pona members": {
+      "description": "original ilo Linku bot"
+    }
+  },
+  "data": {
+       "nya":{
+          "word":"nya",
+          "def":{
+             "particle":"if [conditional marker]"
+          }
+       },
+       "nyáa":{
+          "word":"nyáa",
+          "def":{
+             "particle":"please [politeness marker]"
+          }
+       },
+       "nyanya":{
+          "word":"nyanya",
+          "def":{
+             "adjective":"[diminuitive marker]",
+             "adverb":"[diminuitive marker]"
+          }
+       },
+       "o":{
+          "word":"o",
+          "def":{
+             "numeral":"zero",
+             "adverb":"false, no, never"
+          }
+       },
+       "ô":{
+          "word":"ô",
+          "def":{
+             "conjunction":"but"
+          }
+       },
+       "õ":{
+          "word":"õ",
+          "def":{
+             "particle":"not, un-, in-"
+          }
+       },
+       "òv":{
+          "word":"òv",
+          "def":{
+             "auxiliary verb":"must",
+             "verb":"to be obligated to, to need"
+          }
+       },
+       "öv":{
+          "word":"öv",
+          "def":{
+             "verb":"to have, to own, to possess"
+          }
+       },
+       "ov":{
+          "word":"ov",
+          "def":{
+             "particle":"question"
+          }
+       },
+       "ov üwów":{
+          "word":"ov üwów",
+          "def":{
+             "adverb":"when"
+          }
+       },
+       "ov öwo":{
+          "word":"ov öwo",
+          "def":{
+             "pronoun":"what, who"
+          }
+       },
+       "ov õwõ":{
+          "word":"ov õwõ",
+          "def":{
+             "adverb":"where"
+          }
+       },
+       "ov ovowu":{
+          "word":"ov ovowu",
+          "def":{
+             "adverb":"why"
+          }
+       },
+       "ovö":{
+          "word":"ovö",
+          "def":{
+             "adjective":"old, long [duration], late",
+             "adverb":"long [duration], late"
+          }
+       },
+       "óvo":{
+          "word":"óvo",
+          "def":{
+             "noun":"moon, month"
+          }
+       },
+       "óvõ":{
+          "word":"óvõ",
+          "def":{
+             "noun":"chest, breast"
+          }
+       },
+       "òvo":{
+          "word":"òvo",
+          "def":{
+             "noun":"intention"
+          }
+       },
+       "òvö":{
+          "word":"òvö",
+          "def":{
+             "noun":"cold",
+             "adjective":"cold"
+          }
+       },
+       "övó":{
+          "word":"övó",
+          "def":{
+             "noun":"rule, authority, reign, regime"
+          }
+       },
+       "övô":{
+          "word":"övô",
+          "def":{
+             "noun":"sadness, sorrow",
+             "adjective":"sad"
+          }
+       },
+       "övö":{
+          "word":"övö",
+          "def":{
+             "noun":"tree"
+          }
+       },
+       "õvo":{
+          "word":"õvo",
+          "def":{
+             "adjective":"quick, fast, rapid"
+          }
+       },
+       "õvò":{
+          "word":"õvò",
+          "def":{
+             "particle":"[imperative or determination]",
+             "preposition":"against, in opposition to, despite"
+          }
+       },
+       "õvŏ":{
+          "word":"õvŏ",
+          "def":{
+             "noun":"back, rear",
+             "adjective":"back, rear"
+          }
+       },
+       "õvö":{
+          "word":"õvö",
+          "def":{
+             "noun":"lie, deception"
+          }
+       },
+       "ŏvo":{
+          "word":"ŏvo",
+          "def":{
+             "noun":"group, large amount, flock, swarm, herd",
+             "adjective":"many, much",
+             "adverb":"much, a lot, very, [in comparisons:] more"
+          }
+       },
+       "ŏvo ŏvo":{
+          "word":"ŏvo ŏvo",
+          "def":{
+             "adjective":"most",
+             "adverb":"most"
+          }
+       },
+       "ŏvo ovo":{
+          "word":"ŏvo ovo",
+          "def":{
+             "noun":"speech, talk, story"
+          }
+       },
+       "ovo":{
+          "word":"ovo",
+          "def":{
+             "noun":"word"
+          }
+       },
+       "ovo ŏwu":{
+          "word":"ovo ŏwu",
+          "def":{
+             "noun":"magic spell"
+          }
+       },
+       "ovõv":{
+          "word":"ovõv",
+          "def":{
+             "verb":"to happen, to act, to do"
+          }
+       },
+       "òvov":{
+          "word":"òvov",
+          "def":{
+             "verb":"to want, to intend, to mean"
+          }
+       },
+       "ôvov":{
+          "word":"ôvov",
+          "def":{
+             "verb":"to stand, to stand up, to help up, to erect"
+          }
+       },
+       "övóv":{
+          "word":"övóv",
+          "def":{
+             "verb":"to rule, to govern, to dominate, to oppress"
+          }
+       },
+       "övöv":{
+          "word":"övöv",
+          "def":{
+             "verb":"to hold, to carry"
+          }
+       },
+       "õvöv":{
+          "word":"õvöv",
+          "def":{
+             "verb":"to lie, to deceive"
+          }
+       },
+       "òvöv":{
+          "word":"òvöv",
+          "def":{
+             "verb":"to request, to order"
+          }
+       },
+       "òvöv subject ù person":{
+          "word":"òvöv subject ù person",
+          "def":{
+             "verb":"to request something from somebody"
+          }
+       },
+       "ôvöv":{
+          "word":"ôvöv",
+          "def":{
+             "verb":"to ask"
+          }
+       },
+       "ôvöv subject":{
+          "word":"ôvöv subject",
+          "def":{
+             "verb":"to ask about something"
+          }
+       },
+       "ôvöv person":{
+          "word":"ôvöv person",
+          "def":{
+             "verb":"to ask somebody"
+          }
+       },
+       "ôvöv subject ù person":{
+          "word":"ôvöv subject ù person",
+          "def":{
+             "verb":"to ask somebody about something"
+          }
+       },
+       "ovov":{
+          "word":"ovov",
+          "def":{
+             "verb":"to speak, to talk, to say, to answer"
+          }
+       },
+       "ovov subject":{
+          "word":"ovov subject",
+          "def":{
+             "verb":"to say something"
+          }
+       },
+       "ovov person":{
+          "word":"ovov person",
+          "def":{
+             "verb":"to talk to somebody"
+          }
+       },
+       "ovov subject ù person":{
+          "word":"ovov subject ù person",
+          "def":{
+             "verb":"to say something to somebody, to talk to somebody about something"
+          }
+       },
+       "ovovo":{
+          "word":"ovovo",
+          "def":{
+             "noun":"eye"
+          }
+       },
+       "ŏvovo":{
+          "word":"ŏvovo",
+          "def":{
+             "noun":"excess, surplus",
+             "adjective":"excessive",
+             "adverb":"excessively"
+          }
+       },
+       "ôvovo":{
+          "word":"ôvovo",
+          "def":{
+             "noun":"circle, wheel",
+             "adjective":"round",
+             "adverb":"round, in a circle"
+          }
+       },
+       "övovo":{
+          "word":"övovo",
+          "def":{
+             "noun":"cart, car, vehicle"
+          }
+       },
+       "övovo óvowu":{
+          "word":"övovo óvowu",
+          "def":{
+             "noun":"plane, helicopter, flying vehicle"
+          }
+       },
+       "övovo ũwò":{
+          "word":"övovo ũwò",
+          "def":{
+             "noun":"boat, ship, swimming vehicle"
+          }
+       },
+       "ovow":{
+          "word":"ovow",
+          "def":{
+             "noun":"event, incident"
+          }
+       },
+       "ôvöw":{
+          "word":"ôvöw",
+          "def":{
+             "noun":"question",
+             "adjective":"unsure"
+          }
+       },
+       "òvow":{
+          "word":"òvow",
+          "def":{
+             "adverb":"again, another time, back",
+             "adjective":"repeated"
+          }
+       },
+       "òvöw":{
+          "word":"òvöw",
+          "def":{
+             "noun":"snow",
+             "adjective":"snowy"
+          }
+       },
+       "ŏvow":{
+          "word":"ŏvow",
+          "def":{
+             "noun":"amount, number, digit, letter"
+          }
+       },
+       "ovowo":{
+          "word":"ovowo",
+          "def":{
+             "noun":"edge, corner, angle"
+          }
+       },
+       "òvowo":{
+          "word":"òvowo",
+          "def":{
+             "noun":"alcoholic drink"
+          }
+       },
+       "ŏvowo":{
+          "word":"ŏvowo",
+          "def":{
+             "adjective":"collective, cooperative",
+             "adverb":"together, collectively, cooperatively"
+          }
+       },
+       "ôvowo":{
+          "word":"ôvowo",
+          "def":{
+             "noun":"snake"
+          }
+       },
+       "òvowov":{
+          "word":"òvowov",
+          "def":{
+             "verb":"to fail, to miss [fail to hit or attend]"
+          }
+       },
+       "ovowu":{
+          "word":"ovowu",
+          "def":{
+             "noun":"cause, reason, motive"
+          }
+       },
+       "ovowü":{
+          "word":"ovowü",
+          "def":{
+             "noun":"ear"
+          }
+       },
+       "ovowũ":{
+          "word":"ovowũ",
+          "def":{
+             "noun":"point, dot, spot, full stop, period"
+          }
+       },
+       "óvowu":{
+          "word":"óvowu",
+          "def":{
+             "noun":"sky, air, wind"
+          }
+       },
+       "övòwu":{
+          "word":"övòwu",
+          "def":{
+             "noun":"shirt"
+          }
+       },
+       "õvowu":{
+          "word":"õvowu",
+          "def":{
+             "noun":"buttocks, rear, butt"
+          }
+       },
+       "övöwu":{
+          "word":"övöwu",
+          "def":{
+             "noun":"paper, page, note, letter"
+          }
+       },
+       "övöwu ovow":{
+          "word":"övöwu ovow",
+          "def":{
+             "noun":"newspaper"
+          }
+       },
+       "ovowuv":{
+          "word":"ovowuv",
+          "def":{
+             "verb":"to cause, to make something happen, to make somebody do something"
+          }
+       },
+       "ovü":{
+          "word":"ovü",
+          "def":{
+             "noun":"beginning, start"
+          }
+       },
+       "òvu":{
+          "word":"òvu",
+          "def":{
+             "noun":"obligation"
+          }
+       },
+       "òvü":{
+          "word":"òvü",
+          "def":{
+             "noun":"dress"
+          }
+       },
+       "ôvü":{
+          "word":"ôvü",
+          "def":{
+             "noun":"animal",
+             "adjective":"wild"
+          }
+       },
+       "övu":{
+          "word":"övu",
+          "def":{
+             "noun":"plant"
+          }
+       },
+       "övù":{
+          "word":"övù",
+          "def":{
+             "noun":"interruption, break"
+          }
+       },
+       "õvù":{
+          "word":"õvù",
+          "def":{
+             "adjective":"good, fine",
+             "adverb":"fine, well"
+          }
+       },
+       "ovu":{
+          "word":"ovu",
+          "def":{
+             "noun":"land, ground, region, country"
+          }
+       },
+       "ovu ũvo":{
+          "word":"ovu ũvo",
+          "def":{
+             "noun":"field, farmland, farm"
+          }
+       },
+       "ovu ũwò":{
+          "word":"ovu ũwò",
+          "def":{
+             "noun":"island"
+          }
+       },
+       "ovüv":{
+          "word":"ovüv",
+          "def":{
+             "verb":"to start, to begin"
+          }
+       },
+       "övùv":{
+          "word":"övùv",
+          "def":{
+             "verb":"to stop, to cease"
+          }
+       },
+       "ovuv (something ù something)":{
+          "word":"ovuv (something ù something)",
+          "def":{
+             "verb":"to add (something to something)"
+          }
+       },
+       "ŏvuvo":{
+          "word":"ŏvuvo",
+          "def":{
+             "noun":"room",
+             "adjective":"snug, secure"
+          }
+       },
+       "ovuvo":{
+          "word":"ovuvo",
+          "def":{
+             "adjective":"usual adverb often, regularly, usually [habitual marker]"
+          }
+       },
+       "ovuvo ovuvo":{
+          "word":"ovuvo ovuvo",
+          "def":{
+             "adverb":"always"
+          }
+       },
+       "ôvuvu":{
+          "word":"ôvuvu",
+          "def":{
+             "noun":"house, building"
+          }
+       },
+       "ôvuvu õwóvo":{
+          "word":"ôvuvu õwóvo",
+          "def":{
+             "noun":"school"
+          }
+       },
+       "ôvüw":{
+          "word":"ôvüw",
+          "def":{
+             "noun":"cloth, fabric",
+             "adjective":"soft, flexible"
+          }
+       },
+       "òvuw":{
+          "word":"òvuw",
+          "def":{
+             "preposition":"in stead of"
+          }
+       },
+       "ôvuw":{
+          "word":"ôvuw",
+          "def":{
+             "noun":"picture, image, form, shape"
+          }
+       },
+       "ôvuw owöwo":{
+          "word":"ôvuw owöwo",
+          "def":{
+             "noun":"statue"
+          }
+       },
+       "ôvuw òwovu":{
+          "word":"ôvuw òwovu",
+          "def":{
+             "noun":"smell"
+          }
+       },
+       "ôvuw ovowo (numeral)":{
+          "word":"ôvuw ovowo (numeral)",
+          "def":{
+             "noun":"(numeral)angle, (numeral)agon"
+          }
+       },
+       "ovuwõ":{
+          "word":"ovuwõ",
+          "def":{
+             "noun":"past, history",
+             "adverb":"[past marker]"
+          }
+       },
+       "ŏvuwõ":{
+          "word":"ŏvuwõ",
+          "def":{
+             "noun":"music"
+          }
+       },
+       "ôvuwo":{
+          "word":"ôvuwo",
+          "def":{
+             "noun":"clothes, piece of clothing",
+             "adjective":"wearing clothing"
+          }
+       },
+       "õvüwŏ":{
+          "word":"õvüwŏ",
+          "def":{
+             "noun":"lizard"
+          }
+       },
+       "övúwu":{
+          "word":"övúwu",
+          "def":{
+             "noun":"grass, leaf, herb"
+          }
+       },
+       "õvùwu":{
+          "word":"õvùwu",
+          "def":{
+             "noun":"right, justice",
+             "adjective":"just, virtuous, right, legitimate"
+          }
+       },
+       "ow":{
+          "word":"ow",
+          "def":{
+             "pronoun":"I, we"
+          }
+       },
+       "òw":{
+          "word":"òw",
+          "def":{
+             "demonstrative":"here, this"
+          }
+       },
+       "öw":{
+          "word":"öw",
+          "def":{
+             "preposition":"with, during",
+             "conjunction":"while"
+          }
+       },
+       "ów":{
+          "word":"ów",
+          "def":{
+             "noun":"colour",
+             "adjective":"coloured, colourful"
+          }
+       },
+       "ów uv övu":{
+          "word":"ów uv övu",
+          "def":{
+             "adjective":"green"
+          }
+       },
+       "ów uv övúwu":{
+          "word":"ów uv övúwu",
+          "def":{
+             "adjective":"blue"
+          }
+       },
+       "owo":{
+          "word":"owo",
+          "def":{
+             "demonstrative":"there, that"
+          }
+       },
+       "owõ":{
+          "word":"owõ",
+          "def":{
+             "noun":"sense"
+          }
+       },
+       "ówo":{
+          "word":"ówo",
+          "def":{
+             "adjective":"big, large, long, extensive",
+             "adverb":"very"
+          }
+       },
+       "òwõ":{
+          "word":"òwõ",
+          "def":{
+             "noun":"type, kind, sort, class"
+          }
+       },
+       "ŏwo":{
+          "word":"ŏwo",
+          "def":{
+             "noun":"dog"
+          }
+       },
+       "ôwö":{
+          "word":"ôwö",
+          "def":{
+             "noun":"sun, star, year",
+             "adjective":"sunny"
+          }
+       },
+       "öwo":{
+          "word":"öwo",
+          "def":{
+             "pronoun":"he, she, it, they",
+             "relative":"pronoun who, which, that"
+          }
+       },
+       "öwò":{
+          "word":"öwò",
+          "def":{
+             "adjective":"slow, tired, exhausted"
+          }
+       },
+       "öwŏ":{
+          "word":"öwŏ",
+          "def":{
+             "noun":"night, darkness",
+             "adjective":"nocturnal, dark",
+             "adverb":"at night"
+          }
+       },
+       "öwö":{
+          "word":"öwö",
+          "def":{
+             "noun":"parent"
+          }
+       },
+       "öwõ":{
+          "word":"öwõ",
+          "def":{
+             "noun":"heart, main part, inside",
+             "adjective":"main"
+          }
+       },
+       "õwö":{
+          "word":"õwö",
+          "def":{
+             "noun":"distance",
+             "adjective":"distant, far"
+          }
+       },
+       "õwo":{
+          "word":"õwo",
+          "def":{
+             "noun":"fish"
+          }
+       },
+       "õwó":{
+          "word":"õwó",
+          "def":{
+             "noun":"knowledge, science",
+             "adjective":"sure, certain adverb certainly"
+          }
+       },
+       "õwõ":{
+          "word":"õwõ",
+          "def":{
+             "noun":"place, location, direction"
+          }
+       },
+       "õwõ owuw":{
+          "word":"õwõ owuw",
+          "def":{
+             "noun":"south",
+             "adjective":"south, southern"
+          }
+       },
+       "õwõ uwow":{
+          "word":"õwõ uwow",
+          "def":{
+             "noun":"north",
+             "adjective":"north, northern"
+          }
+       },
+       "òwo":{
+          "word":"òwo",
+          "def":{
+             "noun":"person, man, woman, someone, somebody"
+          }
+       },
+       "òwo ûvü":{
+          "word":"òwo ûvü",
+          "def":{
+             "noun":"worker, labourer, proletarian"
+          }
+       },
+       "òwo úwu":{
+          "word":"òwo úwu",
+          "def":{
+             "noun":"cutie"
+          }
+       },
+       "òwo övó":{
+          "word":"òwo övó",
+          "def":{
+             "noun":"ruler, monarch, master, mistress"
+          }
+       },
+       "òwo ŭwuvu":{
+          "word":"òwo ŭwuvu",
+          "def":{
+             "noun":"healer, physician, doctor, nurse"
+          }
+       },
+       "òwov":{
+          "word":"òwov",
+          "def":{
+             "verb":"to lie, to lie down, to lay, to put"
+          }
+       },
+       "ŏwov":{
+          "word":"ŏwov",
+          "def":{
+             "verb":"to read"
+          }
+       },
+       "ówov":{
+          "word":"ówov",
+          "def":{
+             "verb":"to laugh, to laugh at, to laught about"
+          }
+       },
+       "ôwöv":{
+          "word":"ôwöv",
+          "def":{
+             "verb":"to swim"
+          }
+       },
+       "öwov":{
+          "word":"öwov",
+          "def":{
+             "verb":"to try, to attempt, to test"
+          }
+       },
+       "öwòv":{
+          "word":"öwòv",
+          "def":{
+             "verb":"to write, to record, to spell, to draw, to paint"
+          }
+       },
+       "õwóv":{
+          "word":"õwóv",
+          "def":{
+             "verb":"to know, to decide"
+          }
+       },
+       "owõv":{
+          "word":"owõv",
+          "def":{
+             "verb":"to perceive, to see, to hear, to smell, to taste, to feel, to think"
+          }
+       },
+       "owõv öw ovovo":{
+          "word":"owõv öw ovovo",
+          "def":{
+             "verb":"to see"
+          }
+       },
+       "owõv öw òwovu":{
+          "word":"owõv öw òwovu",
+          "def":{
+             "verb":"to smell"
+          }
+       },
+       "owõv öw ovowü":{
+          "word":"owõv öw ovowü",
+          "def":{
+             "verb":"to hear"
+          }
+       },
+       "owõv öw uwu":{
+          "word":"owõv öw uwu",
+          "def":{
+             "verb":"to taste"
+          }
+       },
+       "owõv öw öwow":{
+          "word":"owõv öw öwow",
+          "def":{
+             "verb":"to feel [by touch]"
+          }
+       },
+       "owõv öw úvu":{
+          "word":"owõv öw úvu",
+          "def":{
+             "verb":"to think, to feel [emotionally]"
+          }
+       },
+       "öwovo":{
+          "word":"öwovo",
+          "def":{
+             "noun":"result, product"
+          }
+       },
+       "ówovo":{
+          "word":"ówovo",
+          "def":{
+             "noun":"height, plateau",
+             "adjective":"high, elevated"
+          }
+       },
+       "ówovö":{
+          "word":"ówovö",
+          "def":{
+             "noun":"anger, rage",
+             "adjective":"angry"
+          }
+       },
+       "õwóvo":{
+          "word":"õwóvo",
+          "def":{
+             "noun":"learning, study"
+          }
+       },
+       "õwõvo":{
+          "word":"õwõvo",
+          "def":{
+             "noun":"right, right side",
+             "adjective":"right"
+          }
+       },
+       "õwóvov":{
+          "word":"õwóvov",
+          "def":{
+             "verb":"to study, to learn, to get to know, to examine"
+          }
+       },
+       "owovu":{
+          "word":"owovu",
+          "def":{
+             "noun":"part, piece",
+             "adjective":"split, divided"
+          }
+       },
+       "(num1) owovu (num2)":{
+          "word":"(num1) owovu (num2)",
+          "def":{
+             "numeral":"num1/num2"
+          }
+       },
+       "u owovu uwo":{
+          "word":"u owovu uwo",
+          "def":{
+             "numeral":"1/2, half"
+          }
+       },
+       "òwovu":{
+          "word":"òwovu",
+          "def":{
+             "noun":"nose"
+          }
+       },
+       "ŏwovu":{
+          "word":"ŏwovu",
+          "def":{
+             "noun":"death",
+             "adjective":"dead"
+          }
+       },
+       "õwõvu":{
+          "word":"õwõvu",
+          "def":{
+             "noun":"left, left side",
+             "adjective":"left"
+          }
+       },
+       "ôwovu":{
+          "word":"ôwovu",
+          "def":{
+             "noun":"gender"
+          }
+       },
+       "ôwovu úwu":{
+          "word":"ôwovu úwu",
+          "def":{
+             "adjective":"transgender"
+          }
+       },
+       "öwóvu":{
+          "word":"öwóvu",
+          "def":{
+             "noun":"value",
+             "adjective":"valuable, expensive"
+          }
+       },
+       "òwovuv":{
+          "word":"òwovuv",
+          "def":{
+             "verb":"to transport, to bring"
+          }
+       },
+       "òwovuv object ù recipient":{
+          "word":"òwovuv object ù recipient",
+          "def":{
+             "verb":"to transport/bring something to somebody/somewhere"
+          }
+       },
+       "owow":{
+          "word":"owow",
+          "def":{
+             "adjective":"different, other"
+          }
+       },
+       "ówow":{
+          "word":"ówow",
+          "def":{
+             "adjective":"new, recent, novel, fresh"
+          }
+       },
+       "ówöw":{
+          "word":"ówöw",
+          "def":{
+             "noun":"sound, noise",
+             "adjective":"noisy, loud"
+          }
+       },
+       "ówöw üwŭ óvowu":{
+          "word":"ówöw üwŭ óvowu",
+          "def":{
+             "noun":"thunder"
+          }
+       },
+       "ôwow":{
+          "word":"ôwow",
+          "def":{
+             "noun":"state, status, condition"
+          }
+       },
+       "öwow":{
+          "word":"öwow",
+          "def":{
+             "noun":"skin, outside, surface",
+             "adjective":"outer, external",
+             "adverb":"apparently, seemingly"
+          }
+       },
+       "öwòw":{
+          "word":"öwòw",
+          "def":{
+             "adjective":"direct, straight",
+             "adverb":"directly"
+          }
+       },
+       "öwôw":{
+          "word":"öwôw",
+          "def":{
+             "noun":"family",
+             "adjective":"belonging to the family"
+          }
+       },
+       "owowo":{
+          "word":"owowo",
+          "def":{
+             "noun":"Earth [the planet]"
+          }
+       },
+       "owöwo":{
+          "word":"owöwo",
+          "def":{
+             "noun":"body",
+             "adjective":"bodily, physical"
+          }
+       },
+       "ówowo":{
+          "word":"ówowo",
+          "def":{
+             "noun":"fear",
+             "adjective":"afraid"
+          }
+       },
+       "ôwowo":{
+          "word":"ôwowo",
+          "def":{
+             "noun":"stone, rock",
+             "adjective":"made from stone, hard, inflexible, stubborn"
+          }
+       },
+       "õwówo":{
+          "word":"õwówo",
+          "def":{
+             "noun":"god, godess, deity"
+          }
+       },
+       "owowov":{
+          "word":"owowov",
+          "def":{
+             "verb":"to find"
+          }
+       },
+       "ŏwöwov":{
+          "word":"ŏwöwov",
+          "def":{
+             "verb":"to lack, to miss [somebody]"
+          }
+       },
+       "ówowu":{
+          "word":"ówowu",
+          "def":{
+             "noun":"lightning, electricity",
+             "adjective":"electric, electrical"
+          }
+       },
+       "òwowu":{
+          "word":"òwowu",
+          "def":{
+             "noun":"arm, strength, power, force",
+             "adjective":"strong, powerful, forceful",
+             "adverb":"strongly, forcefully"
+          }
+       },
+       "òwöwu":{
+          "word":"òwöwu",
+          "def":{
+             "noun":"violence, combat, battle",
+             "adjective":"violent"
+          }
+       },
+       "ôwowu":{
+          "word":"ôwowu",
+          "def":{
+             "noun":"example",
+             "adjective":"for example",
+             "adverb":"for example"
+          }
+       },
+       "òwöwuv":{
+          "word":"òwöwuv",
+          "def":{
+             "verb":"to fight"
+          }
+       },
+       "ówü":{
+          "word":"ówü",
+          "def":{
+             "noun":"cat"
+          }
+       },
+       "òwu":{
+          "word":"òwu",
+          "def":{
+             "noun":"pet",
+             "adjective":"tame, domesticated"
+          }
+       },
+       "ŏwu":{
+          "word":"ŏwu",
+          "def":{
+             "noun":"magic, witchcraft",
+             "adjective":"magical"
+          }
+       },
+       "öwú":{
+          "word":"öwú",
+          "def":{
+             "noun":"rotation, turn, day [24 hours]"
+          }
+       },
+       "õwu":{
+          "word":"õwu",
+          "def":{
+             "noun":"hand, vicinity, side",
+             "adjective":"near, nearby, close"
+          }
+       },
+       "ówuv":{
+          "word":"ówuv",
+          "def":{
+             "verb":"to change, to make"
+          }
+       },
+       "öwúv":{
+          "word":"öwúv",
+          "def":{
+             "verb":"to spin, to rotate, to turn"
+          }
+       },
+       "õwuv":{
+          "word":"õwuv",
+          "def":{
+             "verb":"to help, to save, to preserve"
+          }
+       },
+       "òwuv object ù recipient":{
+          "word":"òwuv object ù recipient",
+          "def":{
+             "verb":"to give something to somebody"
+          }
+       },
+       "òwuvo":{
+          "word":"òwuvo",
+          "def":{
+             "noun":"onion"
+          }
+       },
+       "ŏwuvo":{
+          "word":"ŏwuvo",
+          "def":{
+             "noun":"life",
+             "adjective":"alive, animate"
+          }
+       },
+       "ówuvov":{
+          "word":"ówuvov",
+          "def":{
+             "verb":"to grow, to become"
+          }
+       },
+       "òwuvov":{
+          "word":"òwuvov",
+          "def":{
+             "verb":"to grow [crops], to farm"
+          }
+       },
+       "owuvu":{
+          "word":"owuvu",
+          "def":{
+             "noun":"metal",
+             "adjective":"made from metal"
+          }
+       },
+       "owuw":{
+          "word":"owuw",
+          "def":{
+             "preposition":"minus",
+             "adjective":"minus"
+          }
+       },
+       "ówüw":{
+          "word":"ówüw",
+          "def":{
+             "noun":"weight",
+             "adjective":"heavy, difficult",
+             "adverb":"with difficulty"
+          }
+       },
+       "ówuwo":{
+          "word":"ówuwo",
+          "def":{
+             "noun":"morning, east",
+             "adjective":"in the morning, east, eastern",
+             "adverb":"in the morning, east, eastern"
+          }
+       },
+       "öwuwo":{
+          "word":"öwuwo",
+          "def":{
+             "noun":"hour"
+          }
+       },
+       "öwuwo (numeral) uwuvo":{
+          "word":"öwuwo (numeral) uwuvo",
+          "def":{
+             "adverb":"(numeral) o'clock"
+          }
+       },
+       "ówüwu":{
+          "word":"ówüwu",
+          "def":{
+             "noun":"catgirl, catperson, catboy"
+          }
+       },
+       "ôwüwu":{
+          "word":"ôwüwu",
+          "def":{
+             "noun":"smile"
+          }
+       },
+       "ôwüwuv":{
+          "word":"ôwüwuv",
+          "def":{
+             "verb":"to smile"
+          }
+       },
+       "u":{
+          "word":"u",
+          "def":{
+             "numeral":"one",
+             "adverb":"true, yes",
+             "adjective":"real"
+          }
+       },
+       "ŭ":{
+          "word":"ŭ",
+          "def":{
+             "conjunction":"and"
+          }
+       },
+       "ù":{
+          "word":"ù",
+          "def":{
+             "preposition":"at, in, to, on, about [dative and locative marker]"
+          }
+       },
+       "ù õvŏ uv":{
+          "word":"ù õvŏ uv",
+          "def":{
+             "preposition":"behind, after, since"
+          }
+       },
+       "ù öwõ uv":{
+          "word":"ù öwõ uv",
+          "def":{
+             "preposition":"inside, into"
+          }
+       },
+       "ù öwow uv":{
+          "word":"ù öwow uv",
+          "def":{
+             "preposition":"outside of, out of"
+          }
+       },
+       "ù õwu uv":{
+          "word":"ù õwu uv",
+          "def":{
+             "preposition":"next to, near, beside"
+          }
+       },
+       "ù úvu uv":{
+          "word":"ù úvu uv",
+          "def":{
+             "preposition":"on top of, onto, up"
+          }
+       },
+       "ù ûvu uv":{
+          "word":"ù ûvu uv",
+          "def":{
+             "preposition":"through, across"
+          }
+       },
+       "ù ûvu úvu uv":{
+          "word":"ù ûvu úvu uv",
+          "def":{
+             "preposition":"over"
+          }
+       },
+       "ù üwò uv":{
+          "word":"ù üwò uv",
+          "def":{
+             "preposition":"under, down"
+          }
+       },
+       "ù uwüw uv":{
+          "word":"ù uwüw uv",
+          "def":{
+             "preposition":"in front of, before, until, ago"
+          }
+       },
+       "ù üwòwu uv":{
+          "word":"ù üwòwu uv",
+          "def":{
+             "preposition":"between"
+          }
+       },
+       "uv":{
+          "word":"uv",
+          "def":{
+             "preposition":"from, of[genitive marker]"
+          }
+       },
+       "úv":{
+          "word":"úv",
+          "def":{
+             "auxiliary verb":"can",
+             "verb":"to be able to, to be allowed to, to be ready, to be possible"
+          }
+       },
+       "ŭv":{
+          "word":"ŭv",
+          "def":{
+             "adverb":"than, as, like, similar to, equal"
+          }
+       },
+       "üv":{
+          "word":"üv",
+          "def":{
+             "verb":"to take, to grab, to seize"
+          }
+       },
+       "uvo":{
+          "word":"uvo",
+          "def":{
+             "noun":"end, finish"
+          }
+       },
+       "ŭvo":{
+          "word":"ŭvo",
+          "def":{
+             "noun":"fire"
+          }
+       },
+       "üvó":{
+          "word":"üvó",
+          "def":{
+             "noun":"hobby, pastime",
+             "adjective":"fun, pleasant"
+          }
+       },
+       "üvŏ":{
+          "word":"üvŏ",
+          "def":{
+             "noun":"hatred"
+          }
+       },
+       "ũvo":{
+          "word":"ũvo",
+          "def":{
+             "noun":"food",
+             "adjective":"edible"
+          }
+       },
+       "uvov":{
+          "word":"uvov",
+          "def":{
+             "verb":"to finish [perfective marker]"
+          }
+       },
+       "ŭvov":{
+          "word":"ŭvov",
+          "def":{
+             "verb":"to burn"
+          }
+       },
+       "üvóv":{
+          "word":"üvóv",
+          "def":{
+             "verb":"to continue"
+          }
+       },
+       "üvŏv":{
+          "word":"üvŏv",
+          "def":{
+             "verb":"to hate, to dislike"
+          }
+       },
+       "ũvòv":{
+          "word":"ũvòv",
+          "def":{
+             "verb":"to sit, to sit down"
+          }
+       },
+       "uvovo":{
+          "word":"uvovo",
+          "def":{
+             "noun":"norm",
+             "adjective":"normal, ordinary, common, average, plain, simple"
+          }
+       },
+       "ûvovo":{
+          "word":"ûvovo",
+          "def":{
+             "adjective":"open"
+          }
+       },
+       "uvow":{
+          "word":"uvow",
+          "def":{
+             "adjective":"light [weight], easy",
+             "adverb":"easily"
+          }
+       },
+       "ûvowo":{
+          "word":"ûvowo",
+          "def":{
+             "noun":"order, system, organization",
+             "adjective":"organized"
+          }
+       },
+       "ûvowo òwo":{
+          "word":"ûvowo òwo",
+          "def":{
+             "noun":"society"
+          }
+       },
+       "uvowo":{
+          "word":"uvowo",
+          "def":{
+             "noun":"door, gate"
+          }
+       },
+       "ũvowu":{
+          "word":"ũvowu",
+          "def":{
+             "noun":"window"
+          }
+       },
+       "uvu":{
+          "word":"uvu",
+          "def":{
+             "noun":"sleep",
+             "adjective":"non-binary"
+          }
+       },
+       "uvü":{
+          "word":"uvü",
+          "def":{
+             "adjective":"female"
+          }
+       },
+       "úvu":{
+          "word":"úvu",
+          "def":{
+             "noun":"head, top, upper side"
+          }
+       },
+       "ùvu":{
+          "word":"ùvu",
+          "def":{
+             "adjective":"thin, narrow, flat"
+          }
+       },
+       "ûvu":{
+          "word":"ûvu",
+          "def":{
+             "noun":"mouth"
+          }
+       },
+       "ûvü":{
+          "word":"ûvü",
+          "def":{
+             "noun":"task, work, job, profession",
+             "adjective":"busy"
+          }
+       },
+       "üvu":{
+          "word":"üvu",
+          "def":{
+             "adjective":"male"
+          }
+       },
+       "üvú":{
+          "word":"üvú",
+          "def":{
+             "noun":"song"
+          }
+       },
+       "üvũ":{
+          "word":"üvũ",
+          "def":{
+             "noun":"drink"
+          }
+       },
+       "uvuv":{
+          "word":"uvuv",
+          "def":{
+             "verb":"to sleep"
+          }
+       },
+       "úvuv":{
+          "word":"úvuv",
+          "def":{
+             "verb":"to wear"
+          }
+       },
+       "ûvüv":{
+          "word":"ûvüv",
+          "def":{
+             "verb":"to work, to labour, to create, to make, to produce"
+          }
+       },
+       "üvúv":{
+          "word":"üvúv",
+          "def":{
+             "verb":"to sing"
+          }
+       },
+       "üvũv":{
+          "word":"üvũv",
+          "def":{
+             "verb":"to drink"
+          }
+       },
+       "üvüvü":{
+          "word":"üvüvü",
+          "def":{
+             "noun":"bird"
+          }
+       },
+       "uvüwo":{
+          "word":"uvüwo",
+          "def":{
+             "noun":"mediocre meme"
+          }
+       },
+       "ùvüwo":{
+          "word":"ùvüwo",
+          "def":{
+             "noun":"dead meme"
+          }
+       },
+       "ŭvuwõ":{
+          "word":"ŭvuwõ",
+          "def":{
+             "noun":"table"
+          }
+       },
+       "ŭvüwo":{
+          "word":"ŭvüwo",
+          "def":{
+             "noun":"boring meme"
+          }
+       },
+       "ûvüwo":{
+          "word":"ûvüwo",
+          "def":{
+             "noun":"meme that is funny at first glance but actually very problematic"
+          }
+       },
+       "üvuwo":{
+          "word":"üvuwo",
+          "def":{
+             "noun":"good but not quite dank meme"
+          }
+       },
+       "üvúwo":{
+          "word":"üvúwo",
+          "def":{
+             "noun":"meme involving crustaceans"
+          }
+       },
+       "üvùwo":{
+          "word":"üvùwo",
+          "def":{
+             "noun":"high quality but very specific meme that only a handful of people can comprehend properly"
+          }
+       },
+       "üvŭwo":{
+          "word":"üvŭwo",
+          "def":{
+             "noun":"dank meme",
+             "adjective":"awesome"
+          }
+       },
+       "üvûwo":{
+          "word":"üvûwo",
+          "def":{
+             "noun":"old but good meme"
+          }
+       },
+       "uvuwu":{
+          "word":"uvuwu",
+          "def":{
+             "noun":"tool, instrument"
+          }
+       },
+       "úvuwu":{
+          "word":"úvuwu",
+          "def":{
+             "noun":"thought, idea"
+          }
+       },
+       "üvùwu":{
+          "word":"üvùwu",
+          "def":{
+             "adjective":"sufficient",
+             "adverb":"enough, sufficiently"
+          }
+       },
+       "uvuwuv":{
+          "word":"uvuwuv",
+          "def":{
+             "verb":"to use, to utilise"
+          }
+       },
+       "úvuwuv":{
+          "word":"úvuwuv",
+          "def":{
+             "verb":"to care about, to worry about, to pay attention to"
+          }
+       },
+       "uw":{
+          "word":"uw",
+          "def":{
+             "pronoun":"you"
+          }
+       },
+       "ŭw":{
+          "word":"ŭw",
+          "def":{
+             "adjective":"only"
+          }
+       },
+       "ûw":{
+          "word":"ûw",
+          "def":{
+             "adjective":"all, every, full, whole"
+          }
+       },
+       "üw":{
+          "word":"üw",
+          "def":{
+             "adjective":"bad, negative, evil, mean, unkind, cruel"
+          }
+       },
+       "ũw":{
+          "word":"ũw",
+          "def":{
+             "noun":"thing, something, object"
+          }
+       },
+       "ũw ówüw":{
+          "word":"ũw ówüw",
+          "def":{
+             "noun":"difficulty, problem"
+          }
+       },
+       "uwo":{
+          "word":"uwo",
+          "def":{
+             "numeral":"two",
+             "adjective":"a couple of [dual marker]"
+          }
+       },
+       "úwö":{
+          "word":"úwö",
+          "def":{
+             "noun":"sibling"
+          }
+       },
+       "ŭwo":{
+          "word":"ŭwo",
+          "def":{
+             "noun":"kiss"
+          }
+       },
+       "üwò":{
+          "word":"üwò",
+          "def":{
+             "noun":"foot, bottom, lower side, base, foundation"
+          }
+       },
+       "ũwò":{
+          "word":"ũwò",
+          "def":{
+             "noun":"water, liquid",
+             "adjective":"liquid, wet"
+          }
+       },
+       "ũwò óvowu":{
+          "word":"ũwò óvowu",
+          "def":{
+             "noun":"rain",
+             "adjective":"rainy"
+          }
+       },
+       "üwo":{
+          "word":"üwo",
+          "def":{
+             "noun":"amount, group, mass",
+             "adjective":"several, a few, some"
+          }
+       },
+       "üwo ówovo":{
+          "word":"üwo ówovo",
+          "def":{
+             "noun":"mountain"
+          }
+       },
+       "üwo uwöwo":{
+          "word":"üwo uwöwo",
+          "def":{
+             "noun":"desert"
+          }
+       },
+       "üwo ũwò":{
+          "word":"üwo ũwò",
+          "def":{
+             "noun":"body of water, lake, ocean, sea"
+          }
+       },
+       "üwo ôvuwo":{
+          "word":"üwo ôvuwo",
+          "def":{
+             "noun":"outfit, attire"
+          }
+       },
+       "üwo uvuwu ûvü":{
+          "word":"üwo uvuwu ûvü",
+          "def":{
+             "noun":"the means of production"
+          }
+       },
+       "üwo ovo":{
+          "word":"üwo ovo",
+          "def":{
+             "noun":"sentence"
+          }
+       },
+       "üwo övöwu":{
+          "word":"üwo övöwu",
+          "def":{
+             "noun":"book"
+          }
+       },
+       "üwo ôvuvu":{
+          "word":"üwo ôvuvu",
+          "def":{
+             "noun":"village, town, settlement"
+          }
+       },
+       "üwo òwöwu":{
+          "word":"üwo òwöwu",
+          "def":{
+             "noun":"war"
+          }
+       },
+       "ùwov":{
+          "word":"ùwov",
+          "def":{
+             "verb":"to thank"
+          }
+       },
+       "ùwöv":{
+          "word":"ùwöv",
+          "def":{
+             "verb":"to cut, to harvest"
+          }
+       },
+       "ŭwov":{
+          "word":"ŭwov",
+          "def":{
+             "verb":"to kiss"
+          }
+       },
+       "üwov":{
+          "word":"üwov",
+          "def":{
+             "verb":"to jiggle, to wiggle, to curl, to wind, to coil up"
+          }
+       },
+       "uwovu":{
+          "word":"uwovu",
+          "def":{
+             "noun":"center, middle",
+             "adjective":"central"
+          }
+       },
+       "ùwovu":{
+          "word":"ùwovu",
+          "def":{
+             "noun":"fruit, vegetable, berry"
+          }
+       },
+       "ûwövu":{
+          "word":"ûwövu",
+          "def":{
+             "noun":"insect, bug, spider"
+          }
+       },
+       "üwóvu":{
+          "word":"üwóvu",
+          "def":{
+             "noun":"skirt"
+          }
+       },
+       "uwow":{
+          "word":"uwow",
+          "def":{
+             "preposition":"plus",
+             "adjective":"plus"
+          }
+       },
+       "üwôw":{
+          "word":"üwôw",
+          "def":{
+             "noun":"horse"
+          }
+       },
+       "ùwow":{
+          "word":"ùwow",
+          "def":{
+             "noun":"name"
+          }
+       },
+       "õ ùwow":{
+          "word":"õ ùwow",
+          "def":{
+             "noun":"dead name"
+          }
+       },
+       "üwów":{
+          "word":"üwów",
+          "def":{
+             "noun":"time"
+          }
+       },
+       "üwów òw":{
+          "word":"üwów òw",
+          "def":{
+             "adverb":"now, currently",
+             "adjective":"current, present, up-to-date"
+          }
+       },
+       "uwöwo":{
+          "word":"uwöwo",
+          "def":{
+             "noun":"sand",
+             "adjective":"dry"
+          }
+       },
+       "üwòwo":{
+          "word":"üwòwo",
+          "def":{
+             "noun":"pants"
+          }
+       },
+       "ùwowu":{
+          "word":"ùwowu",
+          "def":{
+             "noun":"evening, west",
+             "adjective":"in the evening, west, western",
+             "adverb":"in the evening, west, western"
+          }
+       },
+       "üwòwu":{
+          "word":"üwòwu",
+          "def":{
+             "noun":"leg"
+          }
+       },
+       "uwu":{
+          "word":"uwu",
+          "def":{
+             "noun":"tongue, language"
+          }
+       },
+       "uwü":{
+          "word":"uwü",
+          "def":{
+             "noun":"child, kid"
+          }
+       },
+
+       "ùwu":{
+          "word":"ùwu",
+          "def":{
+             "adjective":"small, little, few, short",
+             "adverb":"barely"
+          }
+       },
+       "ùwü":{
+          "word":"ùwü",
+          "def":{
+             "noun":"heat",
+             "adjective":"hot, warm"
+          }
+       },
+       "üwu":{
+          "word":"üwu",
+          "def":{
+             "pronoun":"self, myself, yourself, himself, herself, itself, themselves"
+          }
+       },
+       "üwŭ":{
+          "word":"üwŭ",
+          "def":{
+             "noun":"fog, mist",
+             "adjective":"foggy, misty, hidden, unseen, mysterious"
+          }
+       },
+       "üwŭ óvowu":{
+          "word":"üwŭ óvowu",
+          "def":{
+             "noun":"cloud",
+             "adjective":"cloudy"
+          }
+       },
+       "üwù":{
+          "word":"üwù",
+          "def":{
+             "noun":"bed"
+          }
+       },
+       "ũwü":{
+          "word":"ũwü",
+          "def":{
+             "noun":"happiness",
+             "adjective":"happy"
+          }
+       },
+       "úwu":{
+          "word":"úwu",
+          "def":{
+             "noun":"love",
+             "adjective":"gay, queer, LGBT, cute, good, nice"
+          }
+       },
+       "úwu owow":{
+          "word":"úwu owow",
+          "def":{
+             "adjective":"heterosexual"
+          }
+       },
+       "ũwù":{
+          "word":"ũwù",
+          "def":{
+             "noun":"way, road, street, travel, journey"
+          }
+       },
+       "ũwù ũwò":{
+          "word":"ũwù ũwò",
+          "def":{
+             "noun":"river, stream"
+          }
+       },
+       "üwû":{
+          "word":"üwû",
+          "def":{
+             "noun":"day-time",
+             "adjective":"diurnal adverb in the day-time, during the day",
+            "noun":"game"
+          }
+       },
+       "üwû uwovu":{
+          "word":"üwû uwovu",
+          "def":{
+             "noun":"noon",
+             "adjective":"at noon",
+             "adverb":"at noon"
+          }
+       },
+       "üwü":{
+          "word":"üwü",
+          "def":{
+             "noun":"beauty",
+             "adjective":"beautiful"
+          }
+       },
+       "üwü uwu":{
+          "word":"üwü uwu",
+          "def":{
+             "adjective":"delicious"
+          }
+       },
+       "úwuv":{
+          "word":"úwuv",
+          "def":{
+             "verb":"to love, to like"
+          }
+       },
+       "ùwuv":{
+          "word":"ùwuv",
+          "def":{
+             "verb":"to eat, to consume"
+          }
+       },
+       "üwuv":{
+          "word":"üwuv",
+          "def":{
+             "verb":"to play"
+          }
+       },
+       "üwùv":{
+          "word":"üwùv",
+          "def":{
+             "verb":"to cuddle, to snuggle"
+          }
+       },
+       "ũwùv":{
+          "word":"ũwùv",
+          "def":{
+             "verb":"to go, to move, to travel, to leave"
+          }
+       },
+       "ũwûv":{
+          "word":"ũwûv",
+          "def":{
+             "verb":"to meet, to gather, to date, to encounter"
+          }
+       },
+       "úwuvo":{
+          "word":"úwuvo",
+          "def":{
+             "noun":"friend, buddy, pal, bro, sis, comrade"
+          }
+       },
+       "ŭwuvo":{
+          "word":"ŭwuvo",
+          "def":{
+             "noun":"flower, blossom"
+          }
+       },
+       "uwuvo":{
+          "word":"uwuvo",
+          "def":{
+             "noun":"line, row, queue, sequence",
+             "adverb":"in line, in sequence"
+          }
+       },
+       "(numeral) uwuvo":{
+          "word":"(numeral) uwuvo",
+          "def":{
+             "adjective":"(numeral)st, (numeral)nd, (numeral)rd, (numeral)th"
+          }
+       },
+       "ùwuvu":{
+          "word":"ùwuvu",
+          "def":{
+             "noun":"sink, dip, depression [geology]",
+             "adjective":"low, deep"
+          }
+       },
+       "ŭwuvu":{
+          "word":"ŭwuvu",
+          "def":{
+             "noun":"medicine",
+             "adjective":"medical"
+          }
+       },
+       "ŭwuvuv":{
+          "word":"ŭwuvuv",
+          "def":{
+             "verb":"to heal, to treat [medically], to care for"
+          }
+       },
+       "uwüw":{
+          "word":"uwüw",
+          "def":{
+             "noun":"face, front side"
+          }
+       },
+       "üwúw":{
+          "word":"üwúw",
+          "def":{
+             "adjective":"young"
+          }
+       },
+       "üwûw":{
+          "word":"üwûw",
+          "def":{
+             "noun":"blanket, cover",
+             "adjective":"covered"
+          }
+       },
+       "uwuwo":{
+          "word":"uwuwo",
+          "def":{
+             "noun":"cross"
+          }
+       },
+       "úwüwõ":{
+          "word":"úwüwõ",
+          "def":{
+             "noun":"future",
+             "adverb":"[future marker]"
+          }
+       },
+       "ûwuwo":{
+          "word":"ûwuwo",
+          "def":{
+             "noun":"light",
+             "adjective":"bright, light"
+          }
+       },
+       "üwuwo":{
+          "word":"üwuwo",
+          "def":{
+             "pronoun":"each other"
+          }
+       },
+       "ũwuwo":{
+          "word":"ũwuwo",
+          "def":{
+             "noun":"computer"
+          }
+       },
+       "ùwuwo":{
+          "word":"ùwuwo",
+          "def":{
+             "noun":"minute"
+          }
+       },
+       "ùwuwo ùwu":{
+          "word":"ùwuwo ùwu",
+          "def":{
+             "noun":"second"
+          }
+       },
+       "uwüwu":{
+          "word":"uwüwu",
+          "def":{
+             "noun":"baby"
+          }
+       },
+       "úwuwu":{
+          "word":"úwuwu",
+          "def":{
+             "adjective":"cute and valid"
+          }
+       },
+       "ûwuwu":{
+          "word":"ûwuwu",
+          "def":{
+             "noun":"compliment",
+             "adjective":"nice, kind, affectionate"
+          }
+       },
+       "úwüwũv":{
+          "word":"úwüwũv",
+          "def":{
+             "verb":"to fall in love with somebody who will not reciprocate your feelings because they follow the heterosexual lifestyle"
+          }
+       },
+       "ŭwuwuv":{
+          "word":"ŭwuwuv",
+          "def":{
+             "verb":"to compliment"
+          }
+       }
+    }
+}
