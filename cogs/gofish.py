@@ -32,6 +32,7 @@ carde = {
     "8": "8️⃣",
     "9": "9️⃣",
     "1": "🔟",
+    "10": "🔟",
     "J": ":regional_indicator_j:",
     "Q": ":regional_indicator_q:",
     "K": " :regional_indicator_k:"
@@ -204,8 +205,11 @@ async def begingofish(ctx):
             embed = embed_playercards(curgame["players"][i]["cards"])
             await i.send("", embed=embed)
 
+
+        await gamescreen.edit_original_message(embed=embed_doneshuffling())
+
         while won == False:
-            await gamescreen.edit_original_message(embed=embed_round(curgame, playerlist[curplayerc], len(carddeck)))
+            gamescreen = await ctx.send(embed=embed_round(curgame, playerlist[curplayerc], len(carddeck)))
 
             nextmove = False
 
@@ -226,10 +230,51 @@ async def begingofish(ctx):
                 await view.wait()
                 askedperson = view.value
 
-                if askingfor in stripcardlist(curgame["players"][askedperson]["cards"]):
-                    await ctx.send("wa.")
+                given, curgame["players"][askedperson]["cards"] = givecards(curgame["players"][askedperson]["cards"], askingfor)
+
+                if len(given) != 0:
+
+                    curgame["players"][curplayer]["cards"] += given #added cards to asking player
+                    curgame["players"][curplayer]["cards"] = shufflesort(curgame["players"][curplayer]["cards"])
+
+                    win, newlist = checkwin(curgame["players"][curplayer]["cards"], askingfor)
+
+                    if win:
+                        curgame["players"][curplayer]["cards"] = newlist
+                        #like, collect a set condition here
+                        #win condition! man. wow.
+
+                    else:
+                        embed = embed_askresult(curplayer, askingfor, askedperson, given)
+                        embed_dm = embed_askresult_dm(curplayer, askingfor, askedperson, given, curgame["players"][curplayer]["cards"])
+
+                        await ctx.send("", embed=embed)
+                        await dmmsg.edit(embed=embed_dm, view=None)
+
+                    #now you can do it again!
+
                 else:
-                    await ctx.send("ho")
+                    #opponent doesn't have card.
+                    #cur asked target for card. they do not have
+
+                    embed = embed_askresult(curplayer, askingfor, askedperson, given)
+                    embed_dm = embed_askresult_dm(curplayer, askingfor, askedperson, given, curgame["players"][curplayer]["cards"])
+
+                    await ctx.send(embed=embed)
+                    await dmmsg.edit(embed=embed_dm, view=None)
+
+                    nextmove = True
+
+            #DRAW A CARD HERE. DRAW A CARD.
+
+            curplayerc += 1
+            if curplayerc >= len(playerlist):
+                curplayerc = 0
+            curplayer = playerlist[curplayerc]
+
+                #draw a card
+                #await ctx.send("card drawing time.")
+
 
                 # YEAAA IT WORKS. WOO. WOW.
 
@@ -271,21 +316,21 @@ class roundviewdm_ask(View):
     def __init__(self, values, playerlist, curplayer):
         super().__init__()
         self.value = None
-        playerset = [item.name for item in playerlist if item.name != curplayer.name]
+        playerset = [item for item in playerlist if item != curplayer]
 
         for i in playerset:
             button = personbutton(style=ButtonStyle.primary,
-                                label= i,
-                                curplayer=curplayer)
+                                label= i.name,
+                                player=i)
             self.add_item(button)
 
 class personbutton(Button):
-    def __init__(self, style, label: int, curplayer: Member):
+    def __init__(self, style, label: str, player: Member):
         super().__init__(style=style, label=label)
-        self.curplayer = curplayer
+        self.player = player
 
     async def callback(self, interaction):
-        self.view.value = self.curplayer
+        self.view.value = self.player
         self.view.stop()
 
 
@@ -399,6 +444,13 @@ def embed_startgame():
     embed.description="shuffling cards..."
     return embed
 
+def embed_doneshuffling():
+    embed = Embed()
+    embed.title = "go fish: current game"
+    embed.colour = colors["flavor"]
+    embed.description="game started! check your dms :)"
+    return embed
+
 def embed_round(curgame, curplayer, cardsleft):
     embed = Embed()
     embed.title = "go fish: current game"
@@ -416,7 +468,7 @@ def embed_round(curgame, curplayer, cardsleft):
 def embed_rounddm(curgame, curplayer):
     embed = Embed()
     embed.title = "go fish: it's your turn :)"
-    embed.colour = colors["flavor2"]
+    embed.colour = colors["action"]
     embed.description = "which card do you want to ask someone for?\nyour cards: "
     for i in curgame["players"][curplayer]["cards"]:
         embed.description += carde[i[0]] + " "
@@ -431,7 +483,7 @@ def embed_rounddm(curgame, curplayer):
 def embed_rounddm_ask(curgame, curplayer, card):
     embed = Embed()
     embed.title = "go fish: asking for cards"
-    embed.colour = colors["flavor2"]
+    embed.colour = colors["action"]
     embed.description = "who do you want to ask for a " + carde[card[0]] + " from?"
 
     for i in curgame["players"]:
@@ -451,6 +503,37 @@ def embed_playercards(cards):
         embed.description += carde[i[0]] + " "
     return embed
 
+def embed_askresult(curplayer, targetcard, targetplayer, given):
+    embed = Embed()
+    embed.title = curplayer.name + " has asked " + targetplayer.name + " for a " + carde[targetcard] + "!"
+    embed.colour = colors["flavor2"]
+    if len(given) == 0:
+        embed.colour = colors["warning"]
+        embed.description = "go fish! " + targetplayer.name + " did not have any " + targetcard + "s."
+
+    else:
+        embed.description = targetplayer.mention + " → " + carde[targetcard] * len(given) + " → " + curplayer.mention
+        footer = "currently still " + curplayer.name + "'s turn."
+        embed.set_footer(text=footer)
+
+    return embed
+
+def embed_askresult_dm(curplayer, targetcard, targetplayer, given, cardlist):
+    embed = Embed()
+    embed.title = "you asked " + targetplayer.name + " for a " + carde[targetcard]
+    embed.colour = colors["flavor2"]
+    if len(given) == 0:
+        embed.colour = colors["warning"]
+        embed.description = "go fish! " + targetplayer.name + " did not have any " + targetcard + "s."
+    else:
+        embed.description = targetplayer.mention + " → " + carde[targetcard] * len(given) + " → " + curplayer.mention
+
+    embed.description += "\nyour cards: "
+    for i in cardlist:
+        embed.description += carde[i[0]] + " "
+
+    return embed
+
 def shufflesort(cardlist):
     global cards
     return sorted(cardlist, key=lambda x: cards.index(x))
@@ -465,7 +548,30 @@ def cardstrip(card):
 def stripcardlist(cardlist):
     return list(set([cardstrip(item) for item in cardlist]))
 
+def givecards(cardlist, target):
+    given = []
+    newcardlist = []
+    for i in cardlist:
+        if cardstrip(i) == target:
+            given.append(i)
+        else:
+            newcardlist.append(i)
 
+    return (given, newcardlist)
+
+def checkwin(cardlist, target):
+    count = 0
+    updatedlist = []
+    for i in cardlist:
+        if cardstrip(i) == target:
+            count += 1
+        else:
+            updatedlist.append(i)
+
+    if count >= 4:
+        return True, updatedlist
+    else:
+        return False, cardlist
 
 # for i in response["def"].keys():
 #     embed.add_field(name=i, value=response["def"][i])
