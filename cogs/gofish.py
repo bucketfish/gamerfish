@@ -226,6 +226,15 @@ async def begingofish(ctx):
                 await view.wait()
                 askedperson = view.value
 
+                if askingfor in stripcardlist(curgame["players"][askedperson]["cards"]):
+                    await ctx.send("wa.")
+                else:
+                    await ctx.send("ho")
+
+                # YEAAA IT WORKS. WOO. WOW.
+
+
+
 
 
 
@@ -453,7 +462,8 @@ def shufflesortstripped(cardlist):
 def cardstrip(card):
     return card[:-1]
 
-
+def stripcardlist(cardlist):
+    return list(set([cardstrip(item) for item in cardlist]))
 
 
 
