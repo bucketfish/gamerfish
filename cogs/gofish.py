@@ -212,6 +212,7 @@ async def begingofish(ctx):
             gamescreen = await ctx.send(embed=embed_round(curgame, playerlist[curplayerc], len(carddeck)))
 
             nextmove = False
+            askingfor = None
 
             while nextmove == False:
                 embed = embed_rounddm(curgame, curplayer)
@@ -265,7 +266,28 @@ async def begingofish(ctx):
 
                     nextmove = True
 
-            #DRAW A CARD HERE. DRAW A CARD.
+            stilldrawing = True
+            while stilldrawing:
+                newcard = random.sample(carddeck, 1)[0]
+                carddeck = [item for item in carddeck if item != newcard ]
+
+                curgame["players"][curplayer]["cards"].append(newcard)
+                curgame["players"][curplayer]["cards"] = shufflesort(curgame["players"][curplayer]["cards"])
+
+                if cardstrip(newcard) == askingfor:
+                    embed = embed_drewcardyes(curplayer, newcard)
+                    #x drew card x.
+
+                else:
+                    embed = embed_drewcardno(curplayer)
+                    stilldrawing = False
+
+                # WIN COND.
+
+                embed_dm = embed_drewcard_dm(newcard)
+                await ctx.send("", embed=embed)
+                await curplayer.send("", embed=embed_dm)
+
 
             curplayerc += 1
             if curplayerc >= len(playerlist):
@@ -471,7 +493,7 @@ def embed_rounddm(curgame, curplayer):
     embed.colour = colors["action"]
     embed.description = "which card do you want to ask someone for?\nyour cards: "
     for i in curgame["players"][curplayer]["cards"]:
-        embed.description += carde[i[0]] + " "
+        embed.description += carde[cardstrip(i[0])] + " "
 
     for i in curgame["players"]:
         if i == curplayer:
@@ -484,7 +506,7 @@ def embed_rounddm_ask(curgame, curplayer, card):
     embed = Embed()
     embed.title = "go fish: asking for cards"
     embed.colour = colors["action"]
-    embed.description = "who do you want to ask for a " + carde[card[0]] + " from?"
+    embed.description = "who do you want to ask for a " + carde[cardstrip(card[0])] + " from?"
 
     for i in curgame["players"]:
         if i == curplayer:
@@ -500,19 +522,19 @@ def embed_playercards(cards):
     embed.colour = colors["flavor"]
     embed.description = ""
     for i in cards:
-        embed.description += carde[i[0]] + " "
+        embed.description += carde[cardstrip(i[0])] + " "
     return embed
 
 def embed_askresult(curplayer, targetcard, targetplayer, given):
     embed = Embed()
-    embed.title = curplayer.name + " has asked " + targetplayer.name + " for a " + carde[targetcard] + "!"
+    embed.title = curplayer.name + " has asked " + targetplayer.name + " for a " + carde[cardstrip(targetcard)] + "!"
     embed.colour = colors["flavor2"]
     if len(given) == 0:
         embed.colour = colors["warning"]
         embed.description = "go fish! " + targetplayer.name + " did not have any " + targetcard + "s."
 
     else:
-        embed.description = targetplayer.mention + " → " + carde[targetcard] * len(given) + " → " + curplayer.mention
+        embed.description = targetplayer.mention + " → " + carde[cardstrip(targetcard)] * len(given) + " → " + curplayer.mention
         footer = "currently still " + curplayer.name + "'s turn."
         embed.set_footer(text=footer)
 
@@ -520,18 +542,41 @@ def embed_askresult(curplayer, targetcard, targetplayer, given):
 
 def embed_askresult_dm(curplayer, targetcard, targetplayer, given, cardlist):
     embed = Embed()
-    embed.title = "you asked " + targetplayer.name + " for a " + carde[targetcard]
+    embed.title = "you asked " + targetplayer.name + " for a " + carde[cardstrip(targetcard)]
     embed.colour = colors["flavor2"]
     if len(given) == 0:
         embed.colour = colors["warning"]
         embed.description = "go fish! " + targetplayer.name + " did not have any " + targetcard + "s."
     else:
-        embed.description = targetplayer.mention + " → " + carde[targetcard] * len(given) + " → " + curplayer.mention
+        embed.description = targetplayer.mention + " → " + carde[cardstrip(targetcard)] * len(given) + " → " + curplayer.mention
 
     embed.description += "\nyour cards: "
     for i in cardlist:
-        embed.description += carde[i[0]] + " "
+        embed.description += carde[cardstrip(i[0])] + " "
 
+    return embed
+
+def embed_drewcardyes(curplayer, card):
+    embed = Embed()
+    embed.title = curplayer.name + " drew a " + carde[cardstrip(card)]
+    embed.colour = colors["flavor2"]
+    embed.description = "the same card they asked for!"
+    footer = "currently still " + curplayer.name + "'s turn."
+    embed.set_footer(text=footer)
+    return embed
+
+def embed_drewcardno(curplayer):
+    embed = Embed()
+    embed.title = curplayer.name + " drew a card"
+    embed.colour = colors["flavor2"]
+    embed.description = "now onto the next player :)"
+    return embed
+
+def embed_drewcard_dm(card):
+    embed = Embed()
+    embed.title = "you drew a card!"
+    embed.colour = colors["flavor2"]
+    embed.description = carde[cardstrip(card)]
     return embed
 
 def shufflesort(cardlist):
@@ -543,7 +588,7 @@ def shufflesortstripped(cardlist):
     return sorted(cardlist, key=lambda x: cards.index(x))
 
 def cardstrip(card):
-    return card[:-1]
+    return card[:-1] if card[-1] in ["♦","♣","♥","♠"] else card
 
 def stripcardlist(cardlist):
     return list(set([cardstrip(item) for item in cardlist]))
@@ -572,33 +617,3 @@ def checkwin(cardlist, target):
         return True, updatedlist
     else:
         return False, cardlist
-
-# for i in response["def"].keys():
-#     embed.add_field(name=i, value=response["def"][i])
-
-#     sentence = input.split()
-#     embeds = []
-#     message_response = ""
-#
-#     for word in sentence:
-#         word = parse_word(word)
-#         response = jasima.get_word_entry(word)
-#         if isinstance(response, str):
-#             message_response += response
-#             continue
-#
-#         embeds.append(embed_response(word, response))
-#
-#     if isinstance(ctx, context.ApplicationContext):
-#         await ctx.respond(message_response, embeds=embeds)
-#     else:
-#         await ctx.send(message_response, embeds=embeds)
-#
-# def embed_response(word, response):
-#     embed = Embed()
-#     embed.title = response["word"]
-#     embed.colour = Colour.from_rgb(247,168,184)
-#     for i in response["def"].keys():
-#         embed.add_field(name=i, value=response["def"][i])
-#
-#     return embed
