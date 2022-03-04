@@ -143,8 +143,10 @@ async def joingofish(ctx):
             embed = embed_alreadyin()
             ephemeral = True
         else:
-            games[ctx.channel]["players"][ctx.author]["cards"] = []
-            games[ctx.channel]["players"][ctx.author]["completed"] = []
+            games[ctx.channel]["players"][ctx.author] = {
+                "cards": [],
+                "completed": []
+            }
             embed = embed_playerjoin(ctx.author.mention, len(games[ctx.channel]["players"].keys()))
 
     else:
@@ -240,17 +242,19 @@ async def begingofish(ctx):
 
                     win, newlist = checkwin(curgame["players"][curplayer]["cards"], askingfor)
 
+                    embed = embed_askresult(curplayer, askingfor, askedperson, given)
+                    embed_dm = embed_askresult_dm(curplayer, askingfor, askedperson, given, curgame["players"][curplayer]["cards"])
+
+                    await ctx.send("", embed=embed)
+                    await dmmsg.edit(embed=embed_dm, view=None)
+
                     if win:
                         curgame["players"][curplayer]["cards"] = newlist
-                        #like, collect a set condition here
-                        #win condition! man. wow.
+                        curgame["players"][curplayer]["completed"].append(askingfor)
 
-                    else:
-                        embed = embed_askresult(curplayer, askingfor, askedperson, given)
-                        embed_dm = embed_askresult_dm(curplayer, askingfor, askedperson, given, curgame["players"][curplayer]["cards"])
+                        embed = embed_completed(curplayer, askingfor)
 
                         await ctx.send("", embed=embed)
-                        await dmmsg.edit(embed=embed_dm, view=None)
 
                     #now you can do it again!
 
@@ -282,11 +286,20 @@ async def begingofish(ctx):
                     embed = embed_drewcardno(curplayer)
                     stilldrawing = False
 
-                # WIN COND.
-
                 embed_dm = embed_drewcard_dm(newcard)
                 await ctx.send("", embed=embed)
                 await curplayer.send("", embed=embed_dm)
+
+
+                win, newlist = checkwin(curgame["players"][curplayer]["cards"], cardstrip(newcard))
+
+                if win:
+                    curgame["players"][curplayer]["cards"] = newlist
+                    curgame["players"][curplayer]["completed"].append(cardstrip(newcard))
+                    #embed player completed the x card
+                    embed = embed_completed(curplayer, cardstrip(newcard))
+
+                    await ctx.send("", embed=embed)
 
 
             curplayerc += 1
@@ -480,8 +493,14 @@ def embed_round(curgame, curplayer, cardsleft):
     embed.description="it's now " + curplayer.mention + "'s turn!"
 
     for i in curgame["players"]:
-        embed.add_field(name=i.name, value=":blue_square: " * len(curgame["players"][i]["cards"]))
+        fieldvalue = ":blue_square: " * len(curgame["players"][i]["cards"])
 
+        if len(curgame["players"][i]["completed"]) != 0:
+            fieldvalue += "\n"
+            for card in curgame["players"][i]["completed"]:
+                fieldvalue += carde[cardstrip(card)] + " "
+
+        embed.add_field(name=i.name, value = fieldvalue)
 
     footer = str(cardsleft) + " cards left in the draw pile."
     embed.set_footer(text=footer)
@@ -498,7 +517,16 @@ def embed_rounddm(curgame, curplayer):
     for i in curgame["players"]:
         if i == curplayer:
             continue
-        embed.add_field(name=i.name, value=":blue_square: " * len(curgame["players"][i]["cards"]))
+
+        fieldvalue = ":blue_square: " * len(curgame["players"][i]["cards"])
+
+        if len(curgame["players"][i]["completed"]) != 0:
+            fieldvalue += "\n"
+            for card in curgame["players"][i]["completed"]:
+                fieldvalue += carde[cardstrip(card)] + " "
+
+        embed.add_field(name=i.name, value = fieldvalue)
+
 
     return embed
 
@@ -546,7 +574,7 @@ def embed_askresult_dm(curplayer, targetcard, targetplayer, given, cardlist):
     embed.colour = colors["flavor2"]
     if len(given) == 0:
         embed.colour = colors["warning"]
-        embed.description = "go fish! " + targetplayer.name + " did not have any " + targetcard + "s."
+        embed.description = "go fish! " + targetplayer.mention + " did not have any " + targetcard + "s."
     else:
         embed.description = targetplayer.mention + " → " + carde[cardstrip(targetcard)] * len(given) + " → " + curplayer.mention
 
@@ -578,6 +606,13 @@ def embed_drewcard_dm(card):
     embed.colour = colors["flavor2"]
     embed.description = carde[cardstrip(card)]
     return embed
+
+def embed_completed(curplayer, card):
+    embed = Embed()
+    embed.title = curplayer.name + " completed a set of " + carde[card]
+    embed.colour = colors["flavor"]
+    return embed
+
 
 def shufflesort(cardlist):
     global cards
