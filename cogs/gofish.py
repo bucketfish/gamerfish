@@ -56,6 +56,7 @@ cardnum = {
     "K": "K"
 }
 
+tasks = {}
 
 class CogGofish(commands.Cog):
     def __init__(self, bot):
@@ -74,11 +75,26 @@ class CogGofish(commands.Cog):
         elif action == "join":
             await joingofish(ctx)
         elif action == "start":
-            await begingofish(ctx)
+            task = asyncio.create_task(begingofish(ctx))
+            tasks[ctx.channel] = task
+            await task
+
         elif action == "leave":
             await leavegofish(ctx)
         elif action == "stop":
-            await stopgame(ctx)
+            if games[ctx.channel]:
+                if ctx.author == games[ctx.channel]["gamemaster"]:
+                    if not tasks[ctx.channel].cancelled():
+                        tasks[ctx.channel].cancel()
+                    else:
+                        tasks[ctx.channel] = None
+                    del tasks[ctx.channel]
+                embed = embed_stopgame()
+                if isinstance(ctx, ApplicationContext):
+                    await ctx.respond("", embed=embed)
+                else:
+                    await ctx.send("", embed=embed)
+
 
     @slash_command(
       name='test',
@@ -415,8 +431,6 @@ async def leavegofish(ctx):
     else:
         await ctx.send(message, embed=embed, ephemeral=ephemeral)
 
-async def stopgame(ctx):
-    pass
 
 def embed_playerjoin(ping, count):
     embed = Embed()
@@ -672,6 +686,12 @@ def embed_gameover(curp): #curgame["players"]
 
     return embed
 
+def embed_stopgame():
+    embed = Embed()
+    embed.title = "game stopped!"
+    embed.description = "the game has been stopped. do `/gofish create` to create a new one."
+    embed.colour = colors["warning"]
+    return embed
 
 def shufflesort(cardlist):
     global cards
