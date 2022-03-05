@@ -81,6 +81,7 @@ class CogGofish(commands.Cog):
 
         elif action == "leave":
             await leavegofish(ctx)
+
         elif action == "stop":
             embed = None
             ephemeral = False
@@ -99,6 +100,7 @@ class CogGofish(commands.Cog):
 
                     else:
                         embed = embed_gamenotstarted()
+                        del games[ctx.channel]
 
                 else:
                     embed = embed_notgamemaster_stop(games[ctx.channel]["gamemaster"].mention)
@@ -446,10 +448,19 @@ async def leavegofish(ctx):
         embed = embed_playerleave(ctx.author.mention, len(games[ctx.channel]["players"].keys())-1)
         games[ctx.channel]["players"].pop(ctx.author)
 
+
     if isinstance(ctx, ApplicationContext):
         await ctx.respond(message, embed=embed, ephemeral=ephemeral)
     else:
         await ctx.send(message, embed=embed, ephemeral=ephemeral)
+
+
+    if len(games[ctx.channel]["players"]) <= 0:
+        embed = embed_noplayers()
+        del games[ctx.channel]
+
+        await ctx.send("", embed=embed)
+
 
 
 def embed_playerjoin(ping, count):
@@ -491,6 +502,13 @@ def embed_nogameyet():
     embed.description="type `/gofish create` to create one!"
     return embed
 
+def embed_noplayers():
+    embed = Embed()
+    embed.title = "all players have left the game."
+    embed.colour = colors["warning"]
+    embed.description="the game has been stopped. type `/gofish create` to create another one!"
+    return embed
+
 def embed_gamestarted(gamemaster):
     embed = Embed()
     embed.title = "the game has already started!"
@@ -509,7 +527,7 @@ def embed_gamenotstarted():
     embed = Embed()
     embed.title = "the game's not started!"
     embed.colour = colors["warning"]
-    embed.description="you can't stop a game without starting it."
+    embed.description="i deleted it anyway."
     return embed
 
 def embed_notenoughplayers():
