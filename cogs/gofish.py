@@ -334,12 +334,12 @@ async def begingofish(ctx):
                 embed = embed_gameover(curgame["players"])
                 await ctx.send("", embed=embed)
                 won = True
-
-
-            curplayerc += 1
-            if curplayerc >= len(playerlist):
-                curplayerc = 0
-            curplayer = playerlist[curplayerc]
+                del games[ctx.channel]
+            else:
+                curplayerc += 1
+                if curplayerc >= len(playerlist):
+                    curplayerc = 0
+                curplayer = playerlist[curplayerc]
 
 
     # game rounds!
