@@ -13,7 +13,6 @@ from discord import context
 
 from defines import text
 from defines import colors
-import jasima
 
 import random
 import asyncio
