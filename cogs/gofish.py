@@ -82,18 +82,38 @@ class CogGofish(commands.Cog):
         elif action == "leave":
             await leavegofish(ctx)
         elif action == "stop":
+            embed = None
+            ephemeral = False
+
             if games[ctx.channel]:
                 if ctx.author == games[ctx.channel]["gamemaster"]:
-                    if not tasks[ctx.channel].cancelled():
-                        tasks[ctx.channel].cancel()
+                    if ctx.channel in tasks.keys():
+                        if not tasks[ctx.channel].cancelled():
+                            tasks[ctx.channel].cancel()
+                        else:
+                            tasks[ctx.channel] = None
+                        del tasks[ctx.channel]
+
+                        embed = embed_stopgame()
+                        del games[ctx.channel]
+
                     else:
-                        tasks[ctx.channel] = None
-                    del tasks[ctx.channel]
-                embed = embed_stopgame()
-                if isinstance(ctx, ApplicationContext):
-                    await ctx.respond("", embed=embed)
+                        embed = embed_gamenotstarted()
+
                 else:
-                    await ctx.send("", embed=embed)
+                    embed = embed_notgamemaster_stop(games[ctx.channel]["gamemaster"].mention)
+                    ephemeral = True
+
+            else:
+                embed = embed_nogameyet()
+                ephemeral = True
+
+            if isinstance(ctx, ApplicationContext):
+                await ctx.respond("", embed=embed, ephemeral=ephemeral)
+            else:
+                await ctx.send("", embed=embed)
+
+
 
 
     @slash_command(
@@ -485,6 +505,13 @@ def embed_notingame():
     embed.description="type `/gofish join` to join in."
     return embed
 
+def embed_gamenotstarted():
+    embed = Embed()
+    embed.title = "the game's not started!"
+    embed.colour = colors["warning"]
+    embed.description="you can't stop a game without starting it."
+    return embed
+
 def embed_notenoughplayers():
     embed = Embed()
     embed.title = "there are not enough players!"
@@ -503,6 +530,12 @@ def embed_notgamemaster_start(ping):
     embed = Embed()
     embed.colour = colors["warning"]
     embed.description="only the gamemaster, " + ping + ", can start the game."
+    return embed
+
+def embed_notgamemaster_stop(ping):
+    embed = Embed()
+    embed.colour = colors["warning"]
+    embed.description="only the gamemaster, " + ping + ", can stop the game."
     return embed
 
 def embed_startgame():
