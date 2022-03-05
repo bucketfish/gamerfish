@@ -9,7 +9,7 @@ from discord import Member
 from discord.ui import View
 from discord.ui import Button
 
-from discord import context
+from discord import ApplicationContext
 
 from defines import text
 from defines import colors
@@ -124,7 +124,7 @@ async def gofish(ctx):
         embeds.append(embed_playerjoin(ctx.author.mention, len(games[ctx.channel]["players"].keys())))
         ephemeral = False
 
-    if isinstance(ctx, context.ApplicationContext):
+    if isinstance(ctx, ApplicationContext):
         await ctx.respond("", embeds=embeds, ephemeral=ephemeral)
     else:
         await ctx.send("", embeds=embeds, ephemeral=ephemeral)
@@ -155,7 +155,7 @@ async def joingofish(ctx):
         embed = embed_nogameyet()
         ephemeral = True
 
-    if isinstance(ctx, context.ApplicationContext):
+    if isinstance(ctx, ApplicationContext):
         await ctx.respond("", embed=embed, ephemeral=ephemeral)
     else:
         await ctx.send(embed=embed, ephemeral=ephemeral)
@@ -183,7 +183,7 @@ async def begingofish(ctx):
         games[ctx.channel]["gameon"] = True
         embeds.append(embed_startgame())
 
-    if isinstance(ctx, context.ApplicationContext):
+    if isinstance(ctx, ApplicationContext):
         gamescreen = await ctx.respond(message, embeds=embeds, ephemeral=ephemeral)
     else:
         gamescreen = await ctx.send(message, embeds=embeds, ephemeral=ephemeral)
@@ -410,7 +410,7 @@ async def leavegofish(ctx):
         embed = embed_playerleave(ctx.author.mention, len(games[ctx.channel]["players"].keys())-1)
         games[ctx.channel]["players"].pop(ctx.author)
 
-    if isinstance(ctx, context.ApplicationContext):
+    if isinstance(ctx, ApplicationContext):
         await ctx.respond(message, embed=embed, ephemeral=ephemeral)
     else:
         await ctx.send(message, embed=embed, ephemeral=ephemeral)

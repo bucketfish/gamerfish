@@ -1,6 +1,6 @@
 from discord.ext import commands
 
-#from keep_alive import keep_alive
+from keep_alive import keep_alive
 
 import os
 from dotenv import load_dotenv
@@ -19,5 +19,5 @@ async def on_ready():
 
 if __name__ == "__main__":
     bot.add_cog(CogGofish(bot))
-    #keep_alive()
+    keep_alive()
     bot.run(TOKEN, reconnect=True)
