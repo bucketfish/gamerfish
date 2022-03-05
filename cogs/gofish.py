@@ -21,6 +21,9 @@ import asyncio
 games = {}
 cards = ["A♦","A♣","A♥","A♠","2♦","2♣","2♥","2♠","3♦","3♣","3♥","3♠","4♦","4♣","4♥","4♠","5♦","5♣","5♥","5♠","6♦","6♣","6♥","6♠","7♦","7♣","7♥","7♠","8♦","8♣","8♥","8♠","9♦","9♣","9♥","9♠","10♦","10♣","10♥","10♠","J♦","J♣","J♥","J♠","Q♦","Q♣","Q♥","Q♠","K♦","K♣","K♥","K♠"]
 
+#cards = ["A♦","A♣","A♥","A♠","2♦","2♣","2♥","2♠","3♦","3♣","3♥","3♠","4♦","4♣","4♥","4♠"]
+
+
 carde = {
     "A": ":regional_indicator_a:",
     "2": "2️⃣",
@@ -197,12 +200,29 @@ async def begingofish(ctx):
         playerlist = list(curgame["players"].keys())
         curplayer = playerlist[curplayerc]
 
+        completeds = 0
+        completecount = 13 #CHANGE THIS CHANGE THIS BANG BANG YAS!!!
+
         if playercount == 2:
             cardspp = 7
 
         for i in curgame["players"].keys():
             curgame["players"][i]["cards"] = shufflesort(random.sample(carddeck, cardspp))
             carddeck = [item for item in carddeck if item not in curgame["players"][i]["cards"]]
+
+
+            for j in curgame["players"][i]["cards"]:
+                askingfor = cardstrip(j)
+                win, newlist = checkwin(curgame["players"][curplayer]["cards"], askingfor)
+
+                if win:
+                    curgame["players"][curplayer]["cards"] = newlist
+                    curgame["players"][curplayer]["completed"].append(askingfor)
+                    #embed player completed the x card
+                    embed = embed_completed(curplayer, askingfor)
+                    completeds += 1
+
+                    await ctx.send("", embed=embed)
 
             embed = embed_playercards(curgame["players"][i]["cards"])
             await i.send("", embed=embed)
@@ -213,7 +233,7 @@ async def begingofish(ctx):
         while won == False:
             gamescreen = await ctx.send(embed=embed_round(curgame, playerlist[curplayerc], len(carddeck)))
 
-            nextmove = False
+            nextmove = False if len(curgame["players"][curplayer]["cards"]) > 0 else True
             askingfor = None
 
             while nextmove == False:
@@ -253,6 +273,7 @@ async def begingofish(ctx):
                         curgame["players"][curplayer]["completed"].append(askingfor)
 
                         embed = embed_completed(curplayer, askingfor)
+                        completeds += 1
 
                         await ctx.send("", embed=embed)
 
@@ -270,7 +291,12 @@ async def begingofish(ctx):
 
                     nextmove = True
 
-            stilldrawing = True
+                if len(curgame["players"][curplayer]["cards"]) <= 0:
+                    nextmove = True
+
+
+
+            stilldrawing = True if len(carddeck) > 0 else False
             while stilldrawing:
                 newcard = random.sample(carddeck, 1)[0]
                 carddeck = [item for item in carddeck if item != newcard ]
@@ -298,8 +324,17 @@ async def begingofish(ctx):
                     curgame["players"][curplayer]["completed"].append(cardstrip(newcard))
                     #embed player completed the x card
                     embed = embed_completed(curplayer, cardstrip(newcard))
+                    completeds += 1
 
                     await ctx.send("", embed=embed)
+
+
+            if completeds >= completecount:
+                #GAME OVER. END IT.
+                #all cards has been drawn. list finished player and list winner
+                embed = embed_gameover(curgame["players"])
+                await ctx.send("", embed=embed)
+                won = True
 
 
             curplayerc += 1
@@ -307,22 +342,7 @@ async def begingofish(ctx):
                 curplayerc = 0
             curplayer = playerlist[curplayerc]
 
-                #draw a card
-                #await ctx.send("card drawing time.")
 
-
-                # YEAAA IT WORKS. WOO. WOW.
-
-
-
-
-
-
-
-
-
-
-    # ADD SOME WAY TO LIKE. LOOK AT COMPLETED PILES OF CARDS. JESUS CHRIST YOU FOOL
     # game rounds!
 
 
@@ -494,6 +514,8 @@ def embed_round(curgame, curplayer, cardsleft):
 
     for i in curgame["players"]:
         fieldvalue = ":blue_square: " * len(curgame["players"][i]["cards"])
+        if len(curgame["players"][i]["cards"]) == 0:
+            fieldvalue = "no cards."
 
         if len(curgame["players"][i]["completed"]) != 0:
             fieldvalue += "\n"
@@ -519,6 +541,8 @@ def embed_rounddm(curgame, curplayer):
             continue
 
         fieldvalue = ":blue_square: " * len(curgame["players"][i]["cards"])
+        if len(curgame["players"][i]["cards"]) == 0:
+            fieldvalue = "no cards."
 
         if len(curgame["players"][i]["completed"]) != 0:
             fieldvalue += "\n"
@@ -539,7 +563,12 @@ def embed_rounddm_ask(curgame, curplayer, card):
     for i in curgame["players"]:
         if i == curplayer:
             continue
-        embed.add_field(name=i.name, value=":blue_square: " * len(curgame["players"][i]["cards"]))
+
+        fieldvalue = ":blue_square: " * len(curgame["players"][i]["cards"])
+        if len(curgame["players"][i]["cards"]) == 0:
+            fieldvalue = "no cards."
+
+        embed.add_field(name=i.name, value=fieldvalue)
     return embed
 
 def embed_playercards(cards):
@@ -611,6 +640,37 @@ def embed_completed(curplayer, card):
     embed = Embed()
     embed.title = curplayer.name + " completed a set of " + carde[card]
     embed.colour = colors["flavor"]
+    return embed
+
+def embed_gameover(curp): #curgame["players"]
+    embed = Embed()
+    embed.title = "🎉 game over! 🎉"
+    embed.colour = colors["action"]
+    maxcount = 0
+    winner = []
+
+    for i in curp:
+        fieldvalue = ""
+        for card in curp[i]["completed"]:
+            fieldvalue += carde[cardstrip(card)] + " "
+
+        if len(curp[i]["completed"]) > maxcount:
+            winner = [i]
+            maxcount = len(curp[i]["completed"])
+        elif len(curp[i]["completed"]) == maxcount:
+            winner.append(i)
+
+        embed.add_field(name=i.name, value = fieldvalue)
+
+    if len(winner) == 1:
+        embed.description = "the winner is " + winner[0].mention + " with " + str(len(curp[winner[0]]["completed"])) + " completed sets!"
+
+    else:
+        embed.description = "the winners are " + winner[0].mention
+        for i in range(1, len(winner)):
+            embed.description += " & " + winner[i].mention
+        embed.description += " with " + str(len(curp[winner[0]]["completed"])) + " completed sets!"
+
     return embed
 
 
